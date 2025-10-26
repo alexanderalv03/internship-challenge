@@ -1,0 +1,85 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+input[type="number"] {
+  padding: 10px;
+  margin: 0 10px 20px 0;
+  width: 120px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Remove setinhas do input number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4facfe;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #9ecfff;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #00f2fe;
+}
+
+.warning {
+  color: orange;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  margin-top: 20px;
+  font-weight: bold;
+}
