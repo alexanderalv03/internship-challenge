@@ -25,44 +25,80 @@ Este desafio consiste em desenvolver uma aplicação em React que interage com u
 - **Backend:** Django
 - **Estilização:** Escolha livre entre CSS puro, pré-processadores (como SASS ou LESS) ou bibliotecas de componentes estilizados (como styled-components).
 
-### Critérios de Avaliação
-- Corretude do cálculo realizado pela API.
-- Qualidade do código em ambas as partes, frontend e backend.
-- Implementação e eficácia das validações de entrada no frontend.
-- Design e usabilidade da interface do usuário.
-- Integração eficiente entre React e Django.
+# Como Rodar o App - Desafio LCM
 
-## Exemplo de Teste
-Para garantir a corretude do seu código, utilize o seguinte exemplo:
-- **Entrada:** 1 e 10
-- **Saída esperada:** 2520
+Este projeto possui **frontend React** e **backend Django**. Siga os passos abaixo para rodar localmente.
 
-### Verificação:
-2520 é o menor número divisível por todos os números de 1 a 10, como demonstrado abaixo:
-- 2520 / 1 = 2520 (Divisível)
-- 2520 / 2 = 1260 (Divisível)
-- 2520 / 3 = 840 (Divisível)
-- 2520 / 4 = 630 (Divisível)
-- 2520 / 5 = 504 (Divisível)
-- 2520 / 6 = 420 (Divisível)
-- 2520 / 7 = 360 (Divisível)
-- 2520 / 8 = 315 (Divisível)
-- 2520 / 9 = 280 (Divisível)
-- 2520 / 10 = 252 (Divisível)
+---
 
-Assegure-se de que sua aplicação calcula corretamente este exemplo como parte do processo de desenvolvimento.
+## 1. Pré-requisitos
 
-## Submissão
-Para submeter sua solução, siga os passos abaixo:
-1. Crie um fork deste repositório (*Mantenha privado).
-2. Desenvolva sua solução no fork criado.
-3. Certifique-se de incluir um `README` em seu repositório com instruções claras sobre como configurar e executar sua aplicação, incluindo o servidor Django.
-4. Envie um e-mail para [rh@salutho.com] com o assunto "Submissão do Desafio de Estágio - [Seu Nome Completo]" com o link do repositório GitHub do seu projeto.
+- **Python** ≥ 3.8  
+- **Node.js** ≥ 18 e **npm**  
 
-## Deadline
-O prazo para submeter as soluções é até às 23:59 do dia 26 de maio de 2024.
+---
 
-## Dúvidas
-Se tiver qualquer dúvida ou necessitar de esclarecimentos adicionais, por favor, envie mensagem para william.silveira@salutho.com.
+## 2. Rodando o backend (Django)
 
-Desejamos boa sorte a todos os participantes!
+1. Abra o terminal na pasta `backend`:
+    ```bash
+    cd backend
+    ```
+
+2. Instale Django:
+    ```bash
+    pip install django
+    ```
+
+3. Execute as migrations iniciais:
+    ```bash
+    python manage.py migrate
+    ```
+
+4. Rode o servidor Django:
+    ```bash
+    python manage.py runserver 8080
+    ```
+
+   - O backend estará disponível em: `http://127.0.0.1:8080`
+   - Teste a API diretamente:  
+     `http://127.0.0.1:8080/api/lcm/?x=1&y=10`
+
+---
+
+## 3. Rodando o frontend (React)
+
+1. Abra outro terminal na pasta `frontend`:
+    ```bash
+    cd frontend
+    ```
+
+2. Instale as dependências do React:
+    ```bash
+    npm install
+    ```
+
+3. Rode o frontend:
+    ```bash
+    npm start
+    ```
+
+   - O app abrirá automaticamente no navegador em: `http://localhost:3000`
+
+---
+
+## 4. Testando o app
+
+- Certifique-se que o **backend está rodando no 8080**.  
+- Certifique-se que o **frontend está rodando no 3000**.  
+- Abra o navegador e acesse: `http://localhost:3000`  
+- Insira valores no intervalo e clique em **Calcular** para ver o LCM.
+
+---
+
+## 5. Observações
+
+- O frontend está configurado para chamar o backend no `localhost:8080`.  
+- Para rodar ambos simultaneamente, abra dois terminais:
+  - Terminal 1: backend (`python manage.py runserver 8080`)  
+  - Terminal 2: frontend (`npm start`)
