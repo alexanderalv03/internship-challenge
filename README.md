@@ -27,6 +27,8 @@ Este projeto possui **frontend React** e **backend Django**. Siga os passos abai
 3. Execute as migrations iniciais:
     ```bash
     python manage.py migrate
+    pip install django django-cors-headers
+
     ```
 
 4. Rode o servidor Django:
